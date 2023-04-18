@@ -1,0 +1,43 @@
+<!-- HTML code for the feed container -->
+<div id="feed"></div>
+
+// JavaScript code to add posts to the feed
+const feed = document.getElementById("feed");
+
+// Sample data for the posts
+const posts = [
+  {
+    title: "Post 1",
+    content: "This is the first post"
+  },
+  {
+    title: "Post 2",
+    content: "This is the second post"
+  },
+  {
+    title: "Post 3",
+    content: "This is the third post"
+  }
+];
+
+// Loop through the posts and create a new post element for each post
+for (let i = 0; i < posts.length; i++) {
+  const post = posts[i];
+  
+  // Create a new post element
+  const postElement = document.createElement("div");
+  postElement.classList.add("post");
+  
+  // Add the post title and content to the post element
+  const titleElement = document.createElement("h2");
+  titleElement.textContent = post.title;
+  
+  const contentElement = document.createElement("p");
+  contentElement.textContent = post.content;
+  
+  postElement.appendChild(titleElement);
+  postElement.appendChild(contentElement);
+  
+  // Append the post element to the feed container
+  feed.appendChild(postElement);
+}
